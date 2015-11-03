@@ -1,0 +1,25 @@
+var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+  <stackTemplate>
+    <banner>
+      <title>siongTime</title>
+    </banner>
+    <collectionList>
+      <% for(var i = 0; i < movies.length; i++) { %>
+        <% if (i % 5 == 0) { %>
+        <shelf>
+          <section>
+        <% } %>
+        <lockup template="${this.BASEURL}movies/<%= movies[i].id %>">
+          <img src="<%= movies[i].poster %>" width="310" height="465" />
+          <title><%= movies[i].title %></title>
+        </lockup>
+        <% if (i % 5 == 4) { %>
+          </section>
+        </shelf>
+        <% } %>
+      <% } %>
+    </collectionList>
+  </stackTemplate>
+</document>`
+}

@@ -1,0 +1,52 @@
+var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+  <head>
+    <style>
+      .darkBackgroundColor {
+        background-color: #091a2a;
+      }
+    </style>
+  </head>
+  <productTemplate class="darkBackgroundColor">
+    <banner>
+      <infoList>
+        <info>
+          <header>
+            <title>Director</title>
+          </header>
+          <% for(var i = 0; i < directors.length; i++) { %>
+            <text><%= directors[i] %></text>
+          <% } %>
+        </info>
+        <info>
+          <header>
+            <title>Actors</title>
+          </header>
+          <% for(var i = 0; i < actors.length; i++) { %>
+            <text><%= actors[i] %></text>
+          <% } %>
+        </info>
+      </infoList>
+      <stack>
+        <title><%= movieData.Title %></title>
+        <row>
+          <text>IMDB: <%= movieData.imdbRating %></text>
+          <text><%= movieData.Runtime %></text>
+          <text><%= movieData.Genre %></text>
+          <text><%= movieData.Year %></text>
+        </row>
+        <description allowsZooming="true" moreLabel="more"><%= movieData.Plot %></description>
+        <row>
+        <% for(var i = 0; i < links.length; i++) { %>
+          <buttonLockup type="play" media="${this.BASEURL}torrents/<%= cachedMovieData.id %>/<%= links[i].id %>">
+            <text><%= links[i].quality %></text>
+            <title><%= links[i].seeds %>\n<%= links[i].size %></title>
+          </buttonLockup>
+        <% } %>
+        </row>
+      </stack>
+      <heroImg src="<%= cachedMovieData.poster_big %>" />
+    </banner>
+  </productTemplate>
+</document>`
+}
