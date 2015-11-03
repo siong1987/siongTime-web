@@ -8,6 +8,8 @@ The API basically returns TVML that can be displayed on the tvOS app.
 The API will download a movie from a torrent source and stream it directly to the
 tvOS app.
 
+You can follow me on Twitter via [@siong1987](https://twitter.com/siong1987).
+
 ## Demo
 
 ![Demo](https://github.com/siong1987/siongTime-web/raw/master/assets/demo.gif)
