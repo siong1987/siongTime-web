@@ -24,7 +24,7 @@ var resourceLoader;
 App.onLaunch = function(options) {
     var javascriptFiles = [
         `${options.baseURL}javascripts/ResourceLoader.js`,
-        `${options.baseURL}javascripts/presenter.js`
+        `${options.baseURL}javascripts/Presenter.js`
     ];
 
     /**
